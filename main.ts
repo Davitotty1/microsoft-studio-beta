@@ -1,9 +1,19 @@
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeLifeBy(1)
+    Foodnotglitch.setPosition(randint(0, 150), randint(0, 110))
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
+    Sansbugr.setPosition(148, 104)
+    Bugr.setPosition(13, 102)
+    Gilhtr.setPosition(17, 16)
+    Gmipr.setPosition(136, 12)
 })
+let Foodnotglitch: Sprite = null
+let Gmipr: Sprite = null
+let Sansbugr: Sprite = null
+let Bugr: Sprite = null
+let Gilhtr: Sprite = null
 let Microsoft = sprites.create(img`
     2 2 2 2 2 2 2 2 d 7 7 7 7 7 7 7 
     2 2 2 2 2 2 2 2 d 7 7 7 7 7 7 7 
@@ -22,7 +32,7 @@ let Microsoft = sprites.create(img`
     9 9 9 9 9 9 9 9 d 5 5 5 5 5 5 5 
     9 9 9 9 9 9 9 9 d 5 5 5 5 5 5 5 
     `, SpriteKind.Player)
-let Gilhtr = sprites.create(img`
+Gilhtr = sprites.create(img`
     ddddbbbeeeeeeceeeeccccdccbecee
     ebbeeeebbbeeeecceeebedebbeeece
     eedccceeeebcdceecedddbcceeeece
@@ -54,7 +64,7 @@ let Gilhtr = sprites.create(img`
     eeeeecccccbdbbeececeeedeeddeee
     ccccceeeeeecdcccccccccddddeeee
     `, SpriteKind.Enemy)
-let Bugr = sprites.create(img`
+Bugr = sprites.create(img`
     . . . . . . . . . . . c . . . b 
     . . . . . . f f f f c . . . b . 
     . . d d d d d 2 2 c c d . b e . 
@@ -72,7 +82,7 @@ let Bugr = sprites.create(img`
     . b b . c f f f d f f . . . . . 
     b b . . c f f . . . . . . . . . 
     `, SpriteKind.Enemy)
-let Sansbugr = sprites.create(img`
+Sansbugr = sprites.create(img`
     . . . . . . . . . . b 6 b . 8 . 
     . . . . . . . . . b 6 9 6 8 8 . 
     . . . . . . b b b b 6 9 9 6 9 . 
@@ -90,7 +100,7 @@ let Sansbugr = sprites.create(img`
     . . . c c c c c c c c b b . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Enemy)
-let Gmipr = sprites.create(img`
+Gmipr = sprites.create(img`
     . . f f f . . . . . . . . . . . 
     f d 4 4 c . . . . 3 3 3 3 d f f 
     f d d c 4 . c c 3 . . f d 3 d c 
@@ -108,7 +118,7 @@ let Gmipr = sprites.create(img`
     d d . d d d f f f f . . . . . . 
     . . d . . . . . . . . . . . . . 
     `, SpriteKind.Enemy)
-let Foodnotglitch = sprites.create(img`
+Foodnotglitch = sprites.create(img`
     6 6 6 6 6 6 6 7 7 6 6 6 6 6 6 6 
     6 6 6 6 6 6 6 7 7 6 6 6 6 6 6 6 
     6 6 6 6 6 6 6 7 7 6 6 6 6 6 6 6 
@@ -133,7 +143,7 @@ Gilhtr.setPosition(17, 16)
 Gmipr.setPosition(136, 12)
 Bugr.setPosition(13, 102)
 Sansbugr.setPosition(148, 104)
-Gmipr.setVelocity(0, 0)
+Gmipr.setVelocity(0, 100)
 Gilhtr.setVelocity(50, 0)
 Bugr.setVelocity(0, 55)
 Sansbugr.setVelocity(40, 0)
@@ -141,6 +151,3 @@ Gmipr.setFlag(SpriteFlag.BounceOnWall, true)
 Gilhtr.setFlag(SpriteFlag.BounceOnWall, true)
 Sansbugr.setFlag(SpriteFlag.BounceOnWall, true)
 Bugr.setFlag(SpriteFlag.BounceOnWall, true)
-game.onUpdateInterval(2000, function () {
-    Foodnotglitch.setPosition(randint(50, 100), randint(50, 100))
-})
