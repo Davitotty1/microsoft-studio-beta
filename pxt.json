@@ -1,12 +1,13 @@
 {
-    "name": "Microsoft Studio (beta)",
+    "name": "Mibrofoft Glith Reporter(beta)",
     "description": "",
     "dependencies": {
         "device": "*",
         "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.3.1",
         "storyboard": "*",
         "keyboard": "*",
-        "arcade-sprite-data": "github:microsoft/arcade-sprite-data#v0.1.0"
+        "arcade-sprite-data": "github:microsoft/arcade-sprite-data#v0.1.0",
+        "tilemaps": "github:microsoft/pxt-tilemaps#v1.10.0"
     },
     "files": [
         "main.blocks",
@@ -19,7 +20,7 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "1.2.9",
+        "target": "1.2.10",
         "targetId": "arcade"
     },
     "supportedTargets": [
